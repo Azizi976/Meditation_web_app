@@ -1,0 +1,60 @@
+{
+  "app": { "name": "Calm & Reflect" },
+  "nav": {
+    "home": "Home",
+    "library": "Library",
+    "profile": "Profile",
+    "login": "Sign In",
+    "logout": "Sign Out"
+  },
+  "home": {
+    "hero_title": "Find Your Inner",
+    "hero_highlight": "Calm",
+    "hero_subtitle": "Guided meditations for sleep, focus, and peace of mind.",
+    "cta": "Explore Library",
+    "featured": "Featured Meditations",
+    "continue": "Continue Listening",
+    "categories": "Browse by Category"
+  },
+  "library": {
+    "title": "Meditation Library",
+    "all": "All",
+    "search_placeholder": "Search meditations..."
+  },
+  "player": {
+    "voice_volume": "Voice",
+    "ambient_volume": "Ambient",
+    "ambient_label": "Ambient Sound",
+    "none": "None",
+    "now_playing": "Now Playing"
+  },
+  "auth": {
+    "login_title": "Welcome Back",
+    "login_subtitle": "Sign in to continue your journey",
+    "register_title": "Begin Your Journey",
+    "register_subtitle": "Create your free account",
+    "email": "Email",
+    "password": "Password",
+    "display_name": "Your Name",
+    "sign_in": "Sign In",
+    "sign_up": "Create Account",
+    "no_account": "Don't have an account?",
+    "have_account": "Already have an account?",
+    "demo_hint": "Demo: demo@calmreflect.app / demo1234"
+  },
+  "profile": {
+    "title": "Your Profile",
+    "favorites": "Favorites",
+    "history": "History",
+    "settings": "Settings",
+    "language": "Language",
+    "no_favorites": "No favorites yet. Explore the library!",
+    "no_history": "No listening history yet."
+  },
+  "common": {
+    "min": "min",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try again"
+  }
+}

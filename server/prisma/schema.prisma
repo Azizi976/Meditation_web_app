@@ -1,0 +1,108 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  displayName  String?
+  language     String   @default("en")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  sessions    Session[]
+  favorites   UserFavorite[]
+  progress    UserProgress[]
+  preferences UserPreferences?
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  userId       String
+  refreshToken String   @unique
+  expiresAt    DateTime
+  createdAt    DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Category {
+  id         Int          @id @default(autoincrement())
+  slug       String       @unique
+  nameEn     String
+  nameHe     String
+  icon       String?
+
+  meditations Meditation[]
+}
+
+model Meditation {
+  id              String   @id @default(cuid())
+  categoryId      Int?
+  titleEn         String
+  titleHe         String
+  descriptionEn   String?
+  descriptionHe   String?
+  instructor      String?
+  durationSeconds Int
+  audioUrl        String
+  thumbnailUrl    String?
+  tags            String   @default("[]")
+  isPublished     Boolean  @default(true)
+  createdAt       DateTime @default(now())
+
+  category  Category?      @relation(fields: [categoryId], references: [id])
+  favorites UserFavorite[]
+  progress  UserProgress[]
+}
+
+model AmbientSound {
+  id      Int    @id @default(autoincrement())
+  nameEn  String
+  nameHe  String
+  audioUrl String
+  icon    String?
+
+  preferences UserPreferences[]
+}
+
+model UserProgress {
+  id                   String   @id @default(cuid())
+  userId               String
+  meditationId         String
+  lastPositionSeconds  Int      @default(0)
+  completed            Boolean  @default(false)
+  listenedAt           DateTime @default(now())
+
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  meditation Meditation @relation(fields: [meditationId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, meditationId])
+}
+
+model UserFavorite {
+  userId       String
+  meditationId String
+  createdAt    DateTime @default(now())
+
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  meditation Meditation @relation(fields: [meditationId], references: [id], onDelete: Cascade)
+
+  @@id([userId, meditationId])
+}
+
+model UserPreferences {
+  userId          String  @id
+  ambientSoundId  Int?
+  voiceVolume     Float   @default(1.0)
+  ambientVolume   Float   @default(0.4)
+
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  ambientSound AmbientSound? @relation(fields: [ambientSoundId], references: [id])
+}

@@ -1,0 +1,60 @@
+{
+  "app": { "name": "שקט ורפלקסיה" },
+  "nav": {
+    "home": "בית",
+    "library": "ספרייה",
+    "profile": "פרופיל",
+    "login": "כניסה",
+    "logout": "יציאה"
+  },
+  "home": {
+    "hero_title": "מצא את השקט",
+    "hero_highlight": "הפנימי שלך",
+    "hero_subtitle": "מדיטציות מודרכות לשינה, מיקוד ושלוות נפש.",
+    "cta": "גלה את הספרייה",
+    "featured": "מדיטציות מומלצות",
+    "continue": "המשך האזנה",
+    "categories": "עיין לפי קטגוריה"
+  },
+  "library": {
+    "title": "ספריית מדיטציות",
+    "all": "הכל",
+    "search_placeholder": "חפש מדיטציות..."
+  },
+  "player": {
+    "voice_volume": "קול",
+    "ambient_volume": "רקע",
+    "ambient_label": "צליל רקע",
+    "none": "ללא",
+    "now_playing": "מנגן כעת"
+  },
+  "auth": {
+    "login_title": "ברוך הבא",
+    "login_subtitle": "התחבר כדי להמשיך את המסע שלך",
+    "register_title": "התחל את המסע",
+    "register_subtitle": "צור חשבון חינמי",
+    "email": "דואר אלקטרוני",
+    "password": "סיסמה",
+    "display_name": "השם שלך",
+    "sign_in": "כניסה",
+    "sign_up": "צור חשבון",
+    "no_account": "אין לך חשבון?",
+    "have_account": "כבר יש לך חשבון?",
+    "demo_hint": "הדגמה: demo@calmreflect.app / demo1234"
+  },
+  "profile": {
+    "title": "הפרופיל שלך",
+    "favorites": "מועדפים",
+    "history": "היסטוריה",
+    "settings": "הגדרות",
+    "language": "שפה",
+    "no_favorites": "אין מועדפים עדיין. גלה את הספרייה!",
+    "no_history": "אין היסטוריית האזנה עדיין."
+  },
+  "common": {
+    "min": "דק׳",
+    "loading": "טוען...",
+    "error": "משהו השתבש",
+    "retry": "נסה שוב"
+  }
+}
